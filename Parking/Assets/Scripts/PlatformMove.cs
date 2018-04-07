@@ -6,7 +6,7 @@ public class PlatformMove : MonoBehaviour {
     public float up_speed = 0.1f;
     public float side_speed = 0.2f;
     public int one_place_hight = 4;
-    public int delta_rotation = 45;
+    public float delta_rotation = 22.5f;
 
     public GameObject in_platform;
     public GameObject car_on_platform;
@@ -18,8 +18,7 @@ public class PlatformMove : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        //MovePlatform(column, paring_place)
-        MovePlatform(0, 1);
+        MovePlatform(3, 3);
     }
 
     void InPlatformMoveOut()
@@ -51,7 +50,7 @@ public class PlatformMove : MonoBehaviour {
     void MovePlatform(int column, int parking_place)
     {
 
-        int rotation = column * delta_rotation;
+        float rotation = column * delta_rotation;
         Quaternion finish_rotation = Quaternion.Euler(0, rotation, 0);
         int hight = parking_place * one_place_hight;
         Vector3 finish_vector = new Vector3(0, hight, 0);
